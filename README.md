@@ -89,7 +89,7 @@ python progressive_DREAM.py
 ## 📊 Workflow Summary
 
 1. **Forward Model:**  
-   The program computes theoretical settlement \( s(t) \) using the analytical solution from Kelly & Huang (2015):
+   The program computes theoretical settlement s(t) using the analytical solution from Kelly & Huang (2015):
 
 $$
 s(t) = m_v\, \sigma\, H \left[ 1 - \sum_{m=0}^{\infty} \frac{2}{M^2} e^{-M^2 T_v} \right],\quad
