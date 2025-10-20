@@ -104,7 +104,6 @@ $$
    The progressive version performs incremental updates, identifying how many field observations are required before settlement predictions are within 5 % of the true value.
 
 
----
 
 ## 📈 Key Features
 
