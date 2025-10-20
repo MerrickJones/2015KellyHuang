@@ -113,7 +113,7 @@ python progressive_DREAM.py
 Kelly, R. B., & Huang, J. (2015).  
 *Bayesian updating of consolidation parameters from field measurements.*  
 **Computers and Geotechnics**, 69, 496–507.  
-https://doi.org/10.1016/j.compgeo.2015.06.010
+[https://doi.org/10.1016/j.compgeo.2015.06.010](https://doi.org/10.1139/cgj-2014-0338)
 
 ---
 
