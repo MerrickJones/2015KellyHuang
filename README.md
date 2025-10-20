@@ -1,3 +1,9 @@
+<!-- Enable MathJax for LaTeX equation rendering -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 # Bayesian Updating for One-Dimensional Consolidation (Kelly & Huang, 2015)
 
 This repository implements a **Bayesian back-analysis** of **one-dimensional consolidation** following the methodology of **Kelly & Huang (2015)**.  
@@ -84,8 +90,10 @@ python progressive_DREAM.py
 ## 📊 Workflow Summary
 
 1. **Forward Model:**  
-s(t) = m_v · σ · H · [ 1 − Σ (2 / M²) e^(−M² T_v) ]
-where M = (π / 2)(2m + 1), and T_v = (c_v t) / H²
+\[
+s(t) = m_v \sigma H \left[ 1 - \sum_{m=0}^{\infty} \frac{2}{M^2} e^{-M^2 T_v} \right],
+\quad M = \frac{\pi}{2}(2m+1), \quad T_v = \frac{c_v t}{H^2}
+\]
 
 2. **Bayesian Updating:**  
    DREAM MCMC explores the posterior parameter space, updating the prior estimates by minimising the difference between predicted and observed settlements.
