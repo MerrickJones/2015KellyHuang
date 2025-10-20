@@ -9,13 +9,18 @@ It employs a Differential Evolution Adaptive Metropolis (**DREAM**) Markov Chain
 
 The program performs parameter inference for a 1D consolidation problem, progressively updating estimates of:
 
-$ m_v = \text{coefficient of volume compressibility (1/kPa)} $  
+<div align="left">
 
-$ H = \text{drainage path length (m)} $  
+$$
+\begin{aligned}
+m_v      &= \text{coefficient of volume compressibility }\;(1/\mathrm{kPa}) \\
+H        &= \text{drainage path length }\;(\mathrm{m}) \\
+\gamma_f &= \text{fill unit weight }\;(\mathrm{kN/m^3}) \\
+c_v      &= \text{coefficient of consolidation }\;(\mathrm{m^2/year})
+\end{aligned}
+$$
 
-$ \gamma_f = \text{fill unit weight (kN/m³)} $  
-
-$ c_v = \text{coefficient of consolidation (m²/year)} $
+</div>
 
 
 Given observed settlement data, the DREAM MCMC sampler explores the posterior distributions of these parameters, updating their estimates as additional field observations become available.
