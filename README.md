@@ -8,10 +8,15 @@ It employs a Differential Evolution Adaptive Metropolis (**DREAM**) Markov Chain
 ## 🧩 Overview
 
 The program performs parameter inference for a 1D consolidation problem, progressively updating estimates of:
-- **m_v** — coefficient of volume compressibility (1/kPa)  
-- **H** — drainage path length (m)  
-- **γ_f** — fill unit weight (kN/m³)  
-- **c_v** — coefficient of consolidation (m²/year)
+
+$$
+\begin{aligned}
+m_v      &= \text{coefficient of volume compressibility }(1/\mathrm{kPa}) \\
+H        &= \text{drainage path length }(\mathrm{m}) \\
+\gamma_f &= \text{fill unit weight }(\mathrm{kN/m^3}) \\
+c_v      &= \text{coefficient of consolidation }(\mathrm{m^2/year})
+\end{aligned}
+$$
 
 Given observed settlement data, the DREAM MCMC sampler explores the posterior distributions of these parameters, updating their estimates as additional field observations become available.
 
@@ -86,15 +91,18 @@ python progressive_DREAM.py
 1. **Forward Model:**  
    The program computes theoretical settlement \( s(t) \) using the analytical solution from Kelly & Huang (2015):
 
-   \[
-   s(t) = m_v \sigma H \left[ 1 - \sum_{m=0}^{\infty} \frac{2}{M^2} e^{-M^2 T_v} \right], \quad M = \frac{\pi}{2}(2m+1), \quad T_v = \frac{c_v t}{H^2}
-   \]
+$$
+s(t) = m_v\, \sigma\, H \left[ 1 - \sum_{m=0}^{\infty} \frac{2}{M^2} e^{-M^2 T_v} \right],\quad
+M = \frac{\pi}{2}(2m+1),\quad
+T_v = \frac{c_v t}{H^2}.
+$$
 
 2. **Bayesian Updating:**  
    DREAM MCMC explores the posterior parameter space, updating the prior estimates by minimising the difference between predicted and observed settlements.
 
 3. **Progressive Assimilation:**  
-   The progressive version performs incremental updates, identifying how many field observations are required before settlement predictions are within 5% of the true value.
+   The progressive version performs incremental updates, identifying how many field observations are required before settlement predictions are within 5 % of the true value.
+
 
 ---
 
