@@ -95,7 +95,6 @@ where:
 
 In practice, the infinite series is truncated to a large integer *N* (e.g., 200–500 terms) such that the tail is negligible.
 
-
 **Implementation notes**
 - In code, the infinite series is truncated to a large integer **N** (e.g., 200–500 terms) such that the tail is negligible for the *t* of interest.  
 - Units of **c_v** and **t** must be consistent (e.g., m²/s with seconds, or m²/yr with years).  
