@@ -84,11 +84,8 @@ python progressive_DREAM.py
 ## 📊 Workflow Summary
 
 1. **Forward Model:**  
-   The program computes theoretical settlement \( s(t) \) using the analytical solution from Kelly & Huang (2015):
-
-   \[
-   s(t) = m_v \sigma H \left[ 1 - \sum_{m=0}^{\infty} \frac{2}{M^2} e^{-M^2 T_v} \right], \quad M = \frac{\pi}{2}(2m+1), \quad T_v = \frac{c_v t}{H^2}
-   \]
+s(t) = m_v · σ · H · [ 1 − Σ (2 / M²) e^(−M² T_v) ]
+where M = (π / 2)(2m + 1), and T_v = (c_v t) / H²
 
 2. **Bayesian Updating:**  
    DREAM MCMC explores the posterior parameter space, updating the prior estimates by minimising the difference between predicted and observed settlements.
